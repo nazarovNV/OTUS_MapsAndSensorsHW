@@ -87,8 +87,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             map.addMarker(
                 MarkerOptions()
                     .position(point)
+                    .icon(BitmapDescriptorFactory.fromBitmap(pinBitmap))
             )
             // TODO("Передвинуть карту к местоположению последнего фото")
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 15f))
         }
     }
 }
