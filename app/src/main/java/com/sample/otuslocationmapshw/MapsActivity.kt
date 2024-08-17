@@ -32,6 +32,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     ) {
         if (it.resultCode == CameraActivity.SUCCESS_RESULT_CODE) {
             // TODO("Обновить точки на карте при получении результата от камеры")
+            showPreviewsOnMap()
         }
     }
 
@@ -90,6 +91,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     .icon(BitmapDescriptorFactory.fromBitmap(pinBitmap))
             )
             // TODO("Передвинуть карту к местоположению последнего фото")
+
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 15f))
         }
     }
